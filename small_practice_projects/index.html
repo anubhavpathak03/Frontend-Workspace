@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;;
+            background-color: #6b6b6b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container {
+            width: 100%;
+            height: 200px;
+            background-color: #a6a2a2;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+        }
+        .first-div {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(17, 0, 255);
+            border-radius: 50%;
+        }
+        .second-div-container {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 255, 0);
+            border-radius: 10px;
+            position: absolute;
+            /* border: 1px solid black; */
+        }
+        
+        .child-1 {
+            top: 0px;
+            /* translate: perspective(500px) translateZ(100px); */
+            z-index: 1;
+            opacity: 0.8;
+        }
+        
+        .child-2 {
+            top: 6px;
+            opacity: 0.6;
+            background-color: rgb(239, 24, 24);
+            z-index: -0.9;
+        }
+        
+        .child-3 {
+            top: 12px;
+            opacity: 0.3;
+            background-color: blue;
+            z-index: -0.9;
+
+        }
+        
+        .third-div-cube {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 0, 0);
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(30deg) rotateY(-45deg);
+        }
+        
+        .face {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 0, 0);
+            border: 2px solid black;
+        }
+
+        .front  { 
+            transform: translateZ(50px); 
+            opacity: 0.6;
+            background-color: #6a6464;
+        }
+        .back   { 
+            transform: rotateY(180deg) translateZ(50px); opacity: 0.4; 
+            background-color: aqua;
+        }
+        .top {
+            transform: rotateX(90deg) translateZ(50px);
+            opacity: 2;
+            background-color: rgb(196, 122, 25);
+        }
+        .left {
+            transform: rotateY(-90deg) translateZ(50px);
+            background-color: rgb(255, 0, 0);;
+            opacity: 0.2;
+            background-color: #f2ce00;
+        }
+        .right {
+            transform: rotateY(0deg) translateZ(50px);
+            background-color: rgb(255, 0, 0);
+            opacity: -2;
+        }
+        .bottom { 
+            transform: rotateX(-90deg) translateZ(50px); opacity: 0.4;
+            background-color: yellowgreen;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="first-div"></div>
+        <div class="second-div-container">
+            <div class="second-div-container child-1"></div>
+            <div class="second-div-container child-2"></div>
+            <div class="second-div-container child-3"></div>
+        </div>
+        <div class="third-div-cube">
+            <div class="face top"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face bottom"></div>
+        </div>
+    </div>
+</body>
+</html>
