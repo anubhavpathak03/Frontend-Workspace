@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Resize</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden; /* prevent from scrolling*/
+        }
+        body {
+            width: 100%;
+            heigth: 100%;
+        }
+        canvas {
+            display: block; /* remove extra spacing*/
+            border: 2px solid black;
+            background: #cdfaff;
+            position: relative;
+            z-index: -1;
+        }
+        .first-div {
+            z-index: 10;
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            left: 45%;
+            top: 50%;
+        }
+        
+        h1 {
+            font-family: cursive;
+            font-size: xx-large;
+            font-weight: 900;
+            color: #690a5e;
+        }
+
+        h2 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #1f6103;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            border-radius: 12px;
+            background-color: #1f6103;
+            color: #fff;
+            border: 3px solid #a1a1a1;
+        }
+        button:hover {
+            background-color: #3eb40c;
+            cursor: pointer;
+            box-shadow: 5px 5px rgb(77, 133, 5);
+        }
+    </style>
+</head>
+<body>
+    <div class="first-div">
+        <h1>
+            Hello World
+        </h1>
+        <h2>learning canvas is really fun</h2>
+        <button class="refresh-button" type="button">Refresh</button>
+    </div>
+    <canvas></canvas>
+    <script src="./canvas.js"></script>
+</body>
+</html>
